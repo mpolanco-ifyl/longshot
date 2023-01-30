@@ -1,8 +1,8 @@
 import streamlit as st
 import openai
 
-# Autenticación con OpenAI
-openai.api_key = "tu_clave_de_api_de_openai"
+# Autenticación de OpenAI (oculta la clave en una variable de entorno)
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 def generate_article(model, prompt):
     completions = openai.Completion.create(
